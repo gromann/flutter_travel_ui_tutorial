@@ -99,14 +99,18 @@ class DestinationCarousel extends StatelessWidget {
                                 ]),
                             child: Stack(
                               children: [
-                                ClipRRect(
-                                  child: Image(
-                                    image: AssetImage(destination.imageUrl),
-                                    height: 180,
-                                    width: 180,
-                                    fit: BoxFit.cover,
+                                // add an animation when opening a destination
+                                Hero(
+                                  tag: destination.imageUrl,
+                                  child: ClipRRect(
+                                    child: Image(
+                                      image: AssetImage(destination.imageUrl),
+                                      height: 180,
+                                      width: 180,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    borderRadius: BorderRadius.circular(20),
                                   ),
-                                  borderRadius: BorderRadius.circular(20),
                                 ),
                                 Positioned(
                                   left: 10,
